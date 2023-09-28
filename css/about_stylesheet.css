@@ -1,0 +1,139 @@
+:root {
+    --sub-color:#fff;
+}
+
+/* ----------------------------- top image ----------------------------- */
+.top {
+    position: relative;
+}
+
+.topImage{
+    height: 450px;
+    width: 1350px;
+    object-fit: cover;
+    width: 100%;
+}
+  
+.topText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    font-size: 60px;
+    color: var(--sub-color);
+    overflow: auto;
+}
+
+.contents {
+    width: 100%;
+    max-width: 1350px;
+    margin-top: 100px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ----------------------------- content1 ----------------------------- */
+.content1{
+    margin: 200px;
+}
+
+.history {
+    color: var(--sub-color);
+    font-size: 20px;
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1s;
+    padding: 30px;
+    border-left: 3px solid #27acd9;
+}
+
+.history.active{
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+.ourHistory {
+    color: var(--sub-color);
+    font-size: 40px;
+    display:none;
+}
+
+
+/* ----------------------------- pictureContent ----------------------------- */
+.pictureContent{
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1s;
+}
+
+.pictureContent.active{
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+.item{
+    width:30%;
+    margin:30px;
+    border-radius: 30px;
+}
+
+
+/* ----------------------------- content2 ----------------------------- */
+.content2{
+    margin: 200px;
+}
+
+.CommunitiesThroughTravel {
+    color: var(--sub-color);
+    font-size: 40px;
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1s;
+}
+
+.CommunitiesThroughTravel.active{
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+.Communities {
+    color: var(--sub-color);
+    font-size: 20px;
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1s;
+    padding: 30px;
+    border-left: 3px solid #27acd9;
+}
+
+.Communities.active{
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+
+
+/* ----------------------------- responsive ----------------------------- */
+@media screen and (max-width: 750px) {
+    .content1{
+        margin: auto;
+    }
+
+    .content2{
+        margin: auto;
+    }
+
+    .pictureContent{
+        display: none;
+    }
+}
