@@ -1,0 +1,359 @@
+/* common */
+
+:root {
+  --main-color: #0f1419;
+  --sub-color:#fff;
+  --main-position: center;
+}
+
+h1{
+  color: var(--sub-color);
+  font-size: 55px;
+  text-align: center;
+  /* margin-top:100px */
+}
+
+/* ----------------------------- top slider ----------------------------- */
+.slideImage{
+  height: 450px;
+  width: 1350px;
+  object-fit: cover;
+}
+
+
+/* ----------------------------- description ----------------------------- */
+.description{
+  margin:70px
+}
+
+.textContent{
+  color: var(--sub-color);
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+/* ----------------------------- card ----------------------------- */
+.card-wrapper
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  margin: 20px auto;
+  width: 288px;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+  text-align: center;
+}
+
+.card_header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card_thumbnail {
+  margin: 0;
+  order: 0;
+  width: 288px;
+  height: auto;
+}
+
+.card_image {
+  width: 100%;
+}
+
+.card_textbox{
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: var(--sub-color);
+  box-sizing: border-box;
+}
+
+.card_textbox > * + *{
+  margin-top: 10px;
+}
+
+.card_titletext{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+.card_overviewtext{
+  font-size: 12px;
+  line-height: 150%;
+}
+
+
+/* ----------------------------- client slider -----------------------------  */
+.client{
+  background-color: var(--sub-color);
+  padding: 30px;
+}
+
+.clientsNPartners{
+  color: #0f1419;
+  /* font-size: 60px;
+  text-align: center;
+  padding:70px */
+}
+
+.wrap {
+  overflow: hidden;
+  display: flex;
+  /* align-items: center; */
+  height: 340px;
+}
+
+.slide {
+  display: flex; 
+  -webkit-animation: slide 20s infinite linear 1s both;
+  animation: slide 20s infinite linear 1s both;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); } 
+}
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.item {
+  transition: all 0.2s;
+  margin-right: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.clientNameUl{
+  display: none;
+}
+
+
+
+/* ----------------------------- responsive ----------------------------- */
+@media screen and (max-width: 1200px) {
+  .slide {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    place-content: center;
+    -webkit-animation: none;
+    animation: none;
+    transform: none;
+    transition: unset;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card-wrapper{
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+ 
+  #wrap_slider {
+    display: none;
+  }
+  
+  .clientNameUl{
+    display:contents;
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+  }
+
+
+  .clientItem{
+    margin:10px;
+    font-weight: bold;
+    font-family:monospace;
+  }
+
+  h1{
+    font-size: 30px;
+  }
+}
+
+
+/*------------------------------------------- jQuery -------------------------------------------*/
+/* The codes below are taken from jQuary */
+/* https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css */
+
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  padding: 0;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.bx-wrapper img {
+  display: block;
+  margin: 0px auto;
+}
+
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+ul.bxslider {
+  list-style: none;
+}
+
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+
+/** THEME
+===================================*/
+.bx-wrapper {
+  background-color: transparent;
+  margin: 0px auto;
+  border: none;
+  box-shadow: none;
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: none;
+}
+
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+  z-index: 3;
+}
+
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  display: none;
+}
+
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  display: none;
+}
+
+.bx-wrapper .bx-next {
+  display: none;
+}
+
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  display: none;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+
+PAGER WITH AUTO-CONTROLS HYBRID LAYOUT
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  /* text-align: left;
+  width: 80%; */
+  display: none;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  /* right: 0;
+  width: 35px; */
+  display: none;
+}
+
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+
